@@ -1,0 +1,18 @@
+<footer class="footer seccion">
+      <div class="navegacion contenedor-footer">
+        <a href="nosotros.php">Nosotros</a>
+        <a href="anuncios.php">Anuncios</a>
+        <a href="blog.php">Blog</a>
+        <a href="contacto.php">Contacto</a>
+      </div>
+      
+
+      <p class="copyright">Todos los Derechos Reservados <?php echo date('Y'); ?> &copy;</p>
+    </footer>
+
+    <script src="/build/js/bundle.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="src/js/sweetAlert.js"></script>
+  </body>
+</html>
