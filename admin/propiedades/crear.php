@@ -29,15 +29,10 @@ $errores = [];
 if($_SERVER ['REQUEST_METHOD'] === 'POST') {
   
  //Imprime en la pantalla
-  // echo "<pre>";
-  // var_dump($_POST);
-  // echo "</pre>";
 
-//   echo "<pre>";
-//   var_dump($_FILES);
-//   echo "</pre>";
-
-
+  echo "<pre>";
+  var_dump($_POST);
+  echo "</pre>";
 
   $titulo = mysqli_real_escape_string($db, $_POST['titulo']);
   $precio = mysqli_real_escape_string($db, $_POST['precio']);
@@ -52,6 +47,7 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
     $imagen = $_FILES['imagen'];
 
+    //Mostrar Errores
   if(!$titulo) {
     $errores[] = "Debes añadir un titulo";
   }
@@ -86,7 +82,7 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
   //Validar por tamaño (100kb máximo)
 
-  $medida = 1000 * 100;
+  $medida = 1000 * 1000;
 
   if($imagen['size'] >$medida) {
     $errores[] = 'La Imagen es muy pesada';
@@ -100,19 +96,21 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
     /**Subida de Archivos */
     //Crear Carpeta
     $carpetaImagenes = '../../imagenes';
-    if(is_dir($carpetaImagenes)) {
+    if(!is_dir($carpetaImagenes)) {
       mkdir($carpetaImagenes);
     }
-//Subir la imagen
-    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "/archivo.jpg");
 
-    exit;
+    //Generar un nombre unico
+    $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
+
+    //Subir la imagen
+    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 
     //Insertar a base de datos
-    $query = " INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamiento, creado, vendedorId) 
-    VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$creado', '$vendedorId') ";
+    $query = " INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, wc, estacionamiento, creado, vendedorId) 
+    VALUES ('$titulo', '$precio', '$nombreImagen', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$creado', '$vendedorId') ";
 
-    // echo $query;
+   // echo $query;
   $resultado = mysqli_query($db, $query);
 
     if($resultado) {
@@ -175,10 +173,10 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
               <select name="vendedor">
                 <option value="">--Seleccione--</option>
-                <!--Iteramos sobre los vendedores utilizando el metodo mysqli_fetch_assoc()-->
+                <!--Iteramos sobre los vendedores utilizando el metodo mysqli_fetch_assoc-->
                 <?php while($vendedor = mysqli_fetch_assoc($resultado)) : ?>
                   <!-- utilizamos un operador ternario para añadir el selected al vendedor -->
-                  <option <?php echo $vendedorId === $vendedor['id'] ? 'selected': ''; ?> value="<?php echo $vendedor['id'];?>"> <?php echo $vendedor['nombre'] . "". $vendedor['apellido']; ?> </option>
+                  <option <?php echo $vendedorId === $vendedor['id'] ? 'selected': ''; ?> value="<?php echo $vendedor['id'];?>"> <?php echo $vendedor['nombre'] . " ". $vendedor['apellido']; ?> </option>
 
                 <?php endwhile; ?>  
               </select>
