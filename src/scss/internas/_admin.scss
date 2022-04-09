@@ -7,4 +7,62 @@
     &.error{
         background-color: $rojo;
     }
+
+    &.exito {
+        background-color: $verde;
+    }
+}
+
+table.propiedades {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+
+    thead {
+        background-color: $verde;
+        //border-top: 4px solid #aabcfe;
+
+        th {
+            color: $blanco;
+            padding: 1.5rem;
+            border-bottom: 1px solid #fff;
+            // border-top-left-radius: 5px;
+            // border-top-right-radius: 5px;
+        }
+    }
+
+    .imagen-tabla{
+        display: inline-block;
+        width: 20rem;
+    }
+
+    tbody {
+        background: $grisOscuro;
+
+        td{
+            border-bottom: 1px solid #fff;
+            color: $blanco;
+            border-top: 1px solid transparent; 
+        }
+
+    }
+}
+
+.imagen-small {
+    width: 20rem;
+    margin: 2rem;
+}
+
+.boton-amarillo-block, .boton-rojo-block{
+    width: 13rem;
+    line-height: 2rem;
+    padding: 1rem 5;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    //border-radius: 222px 178px 182px 190px / 91px 86px 73px 65px;
 }

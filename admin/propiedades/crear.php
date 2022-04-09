@@ -30,9 +30,9 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
   
  //Imprime en la pantalla
 
-  echo "<pre>";
-  var_dump($_POST);
-  echo "</pre>";
+  // echo "<pre>";
+  // var_dump($_POST);
+  // echo "</pre>";
 
   $titulo = mysqli_real_escape_string($db, $_POST['titulo']);
   $precio = mysqli_real_escape_string($db, $_POST['precio']);
@@ -95,7 +95,8 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
     /**Subida de Archivos */
     //Crear Carpeta
-    $carpetaImagenes = '../../imagenes';
+    $carpetaImagenes = '../../imagenes/';
+    
     if(!is_dir($carpetaImagenes)) {
       mkdir($carpetaImagenes);
     }
@@ -115,7 +116,7 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
     if($resultado) {
       //Redireccionar al usuario
-      header("Location: /admin");
+      header("Location: /admin?resultado=1");
     }
   }
   
