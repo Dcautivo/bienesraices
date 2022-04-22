@@ -1,20 +1,18 @@
 .footer {
-    padding: $separacion / 2 0;
+   padding: calc($separacion / 2) 0;
     background-color: $grisOscuro;
     margin: 0;
     .contenido-footer{
-        padding-top: $separacion / 2;
+       padding-top: calc($separacion / 2);
     }
 
     .navegacion {
         visibility: visible;
         opacity: 1;
         height: auto;
-        //align-items: center;
-       // padding-left: center;
-        //padding: 0 20rem;
+        align-items: center;
+        padding-left: center;
     }
-
     .copyright {
         color: $blanco;
         text-align: center;

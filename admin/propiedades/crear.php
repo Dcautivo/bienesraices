@@ -139,7 +139,7 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
       </div>
     <?php endforeach; ?>
 <!--Inicio de Fomulario // enctype para subida de imagenes -->
-    <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
+    <form class="formulario modal" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Información General</legend>
 
@@ -185,11 +185,8 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
             </fieldset>
 
             <input type="submit" value="Crear Propiedad" class="boton boton-verde">
-            <!--<button onclick="mostrar" value="Crear Propiedad" class="boton boton-verde" >Crear Propiedad</button>-->
          
     </form>
-    <!--<a href="/admin" class="boton boton-verde">Volver</a>-->
-    <!--<input type="submit" value="Crear Propiedad" class="boton boton-verde">-->
 
     
   </main>

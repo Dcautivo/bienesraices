@@ -16,21 +16,20 @@
 table.propiedades {
     margin-top: 4rem;
     width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
+   // border-spacing: 0;
+    //border-collapse: collapse;
     text-align: center;
-    border-bottom: 1px solid #fff;
+    //border-bottom: 1px solid #fff;
 
     thead {
-        background-color: $verde;
+        background-color: #3e86b3;
         //border-top: 4px solid #aabcfe;
 
         th {
-            color: $blanco;
             padding: 1.5rem;
-            border-bottom: 1px solid #fff;
-            // border-top-left-radius: 5px;
-            // border-top-right-radius: 5px;
+            //border-bottom: 1px solid #fff;
+            // border-left: 0.5px solid #fff;
+            // border-right: 0.5px solid #fff;
         }
     }
 
@@ -40,14 +39,20 @@ table.propiedades {
     }
 
     tbody {
-        background: $grisOscuro;
+        background: #e3eef1;
 
         td{
-            border-bottom: 1px solid #fff;
-            color: $blanco;
-            border-top: 1px solid transparent; 
+            //border-bottom: 1px solid #fff;
+            // border-left: 0.5px solid #fff;
+            // border-right: 0.5px solid #fff;
+            //border-top: 1px solid transparent; 
         }
 
+    }
+
+    .titulo-tabla{
+        text-align: justify;
+        padding-left: 1rem;
     }
 }
 
@@ -56,13 +61,52 @@ table.propiedades {
     margin: 2rem;
 }
 
-.boton-amarillo-block, .boton-rojo-block{
-    width: 13rem;
+.amarillo-tabla{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-items: center;
+    width: 12rem;
     line-height: 2rem;
-    padding: 1rem 5;
     margin-bottom: 1.5rem;
     border-radius: 4px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 2rem;
+    padding: 1rem 1rem;
+    gap: 5px;
+    background-color: $amarillo;
+    color: $negro;
+    
+    // border-top-right-radius: 8px;
+    // border-bottom-left-radius: 8px;
     //border-radius: 222px 178px 182px 190px / 91px 86px 73px 65px;
+        
 }
+.actualizar {
+    filter: invert(100%);
+    width: 2.5rem;
+    position: relative;
+    top: -0.5rem;
+}
+
+.rojo-tabla {
+    display: grid;
+    background-color: $rojo;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.boton-rojo-tabla {
+    align-items: center;
+    justify-items: center;
+    width: 12rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 2rem;
+    padding: 1rem 1rem;
+    gap: 5px;
+}
+

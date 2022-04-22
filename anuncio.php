@@ -1,6 +1,6 @@
 <?php
 
-require'includes/funciones.php';
+require 'includes/funciones.php';
 
 incluirTemplate('header');
 
@@ -11,8 +11,7 @@ incluirTemplate('header');
       <h1>Casa en Venta frente al bosque</h1>
 
         <picture>
-            <source srcset="build/img/destacada.webp" type="imagen/webp">
-            <source srcset="build/img/destacada.jpg" type="imagen/jpeg">
+            
             <img loading="lazy" src="build/img/destacada.jpg" alt="imagen de la propiedad">
         </picture>
 

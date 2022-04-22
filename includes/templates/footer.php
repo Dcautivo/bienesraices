@@ -13,7 +13,7 @@
 
     <script src="/build/js/bundle.min.js"></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="src/js/sweetAlert.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="src/js/sweetAlert.js"></script> -->
   </body>
 </html>

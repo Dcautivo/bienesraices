@@ -10,10 +10,15 @@
     @include boton($verde, inline-block);
 }
 
-.boton-rojo-block {
+.boton-verde-block {
+    @include boton($verde, block);
+}
+
+//Botones de la tabla admin
+.boton-rojo-tabla {
     @include boton($rojo, block);
 }
 
-.boton-verde-block {
-    @include boton($verde, block);
+.boton-amarillo-tabla {
+    @include boton($amarillo, block);
 }
