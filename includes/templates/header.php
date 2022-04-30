@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bienes Raices</title>
     <link rel="stylesheet" href="/build/css/app.css" />
+    <link rel="icon" href="src/img/favicon.ico">
   </head>
   <body>
       <header class="header  <?php echo  $inicio  ? 'inicio' : ''; ?>">
@@ -27,17 +28,19 @@
                   <a href="anuncios.php">Anuncios</a>
                   <a href="blog.php">Blog</a>
                   <a href="contacto.php">Contacto</a>
+                  <a class="btn-iniciar" href="login.php">Iniciar sesión</a>
+                  <a class="btn-iniciar" href="crear-cuenta.php">Crear Cuenta</a>
                 </nav>
               </div>
 
             </div><!--Barra-->
 
-            <?php
-              if($inicio) {
-                echo "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>";
-              }
-            ?>
-
+            <!-- <?php
+              // if($inicio) {
+                // echo "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>";
+              // }
+            ?> -->
+            <?php echo $inicio ? "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>" : ''; ?>
             
           </div>
     </header>

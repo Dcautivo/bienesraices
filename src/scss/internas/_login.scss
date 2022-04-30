@@ -1,0 +1,117 @@
+
+.inicio-sesion{
+    background-image: url(../img/background2.jpg);
+    background-size: cover;
+}
+.main-section{
+    margin:0 auto;
+    margin-top:15rem;
+    padding: 0;
+    width: 30rem;
+    
+}
+
+.modal-content{
+    background-color: #3b4652;
+    opacity: .85;
+    padding: 20px;
+    box-shadow: 0px 0px 5px #fa4a0f;
+    width: 40rem;
+}
+.user-img{
+    margin-left: 0px;
+    margin-top: -60px;
+    margin-bottom: 35px;
+}
+
+
+
+.user-img img{
+    width: 200px;
+    height: 200px;
+    border: solid 3px #ff5c26;
+    border-radius: 50%;
+    display: inline-block;
+    margin-block: -5rem;
+    margin-bottom: 3rem;
+}
+
+.form-group{
+    padding: 15px 5px;
+    
+}
+
+.user-icon{
+	position: absolute;
+	font-size: 22px;
+	left: 28px;
+	top: 4px;
+    
+}
+.lock-icon{
+	position: absolute;
+	font-size: 22px;
+    left: 28px;
+    top: 60px;
+    
+}
+
+
+.btn-secondary{
+    width: 60%;
+    margin: 25px 0 35px;
+    color: #ffff;
+    font-size: 1.5rem;
+    
+}
+#btningresar{
+    background-color: #fa4a0f;
+    width: 19rem;
+    height: 40px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.forgot{
+    padding: 5px 0;
+}
+
+.forgot a{
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pass-recovery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    color: $blanco;
+    font-size: 10px;
+
+    .recuperar {
+        font-size: 1.5rem;
+        color: $blanco;
+        font-weight: normal;
+    }
+}
+
+.Registro {
+    color: $verde ;
+    font-weight: 10px;
+    margin: none;
+}
+.recuperar {
+    font-size: 1.5rem;
+    color: $blanco;
+    font-weight: normal;
+   // cursor: pointer;
+}
+
+#user-group {
+    display: flex;
+}

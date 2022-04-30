@@ -44,6 +44,9 @@ require '../includes/funciones.php';
 incluirTemplate('header');
 
 ?>   
+<!-- <script src="https://kit.fontawesome.com/1263a3fbcb.js" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="src/scss/fontawesome/css/all.min.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <main class="contenedor seccion">
       <h1>Administrador de Bienes Raices</h1>
@@ -84,16 +87,13 @@ incluirTemplate('header');
             
             
             <td>
-              <!-- Boton Eliminar -->
-            <form method="POST" class="w-100" >
+                  <!-- Boton Eliminar -->
+                <form method="POST" class="w-100" >
 
-                <input type="hidden" name="id" value="<?php echo $propiedad['id'];?> ">
+                    <button class="boton-rojo-tabla" type="hidden" name="id" value="<?php echo $propiedad['id'];?> "><i class="fa-solid fa-trash-can"></i>Eliminar</button>
 
-                <input type="submit" class="boton-rojo-tabla" value="Eliminar">
-
-            </form>
-              <a href="admin/propiedades/actualizar.php?id=<?php echo $propiedad['id'];?> " class="amarillo-tabla" ><img src="src/img/actualizar.svg" class="actualizar">Actualizar</a>
-              
+                </form>
+                  <a href="admin/propiedades/actualizar.php?id=<?php echo $propiedad['id'];?> " class="boton-amarillo-tabla"><i class="fa-solid fa-pencil"></i>Actualizar</a>
             </td>
           </tr>
 

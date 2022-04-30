@@ -61,11 +61,11 @@ table.propiedades {
     margin: 2rem;
 }
 
-.amarillo-tabla{
+.boton-amarillo-tabla{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    justify-items: center;
+    justify-content: space-evenly;
     width: 12rem;
     line-height: 2rem;
     margin-bottom: 1.5rem;
@@ -73,32 +73,21 @@ table.propiedades {
     margin-left: auto;
     margin-right: auto;
     padding-right: 2rem;
-    padding: 1rem 1rem;
-    gap: 5px;
     background-color: $amarillo;
     color: $negro;
+    gap: 2px;
     
     // border-top-right-radius: 8px;
     // border-bottom-left-radius: 8px;
     //border-radius: 222px 178px 182px 190px / 91px 86px 73px 65px;
-        
-}
-.actualizar {
-    filter: invert(100%);
-    width: 2.5rem;
-    position: relative;
-    top: -0.5rem;
+    
 }
 
-.rojo-tabla {
-    display: grid;
-    background-color: $rojo;
-    grid-template-columns: repeat(2,1fr);
-}
 
 .boton-rojo-tabla {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
-    justify-items: center;
     width: 12rem;
     line-height: 2rem;
     margin-bottom: 1.5rem;
@@ -106,7 +95,9 @@ table.propiedades {
     margin-left: auto;
     margin-right: auto;
     padding-right: 2rem;
-    padding: 1rem 1rem;
     gap: 5px;
+    background-color: $rojo;
+    color: $negro;
+    //font-weight: 400;
+    
 }
-
