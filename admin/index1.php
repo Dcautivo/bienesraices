@@ -12,23 +12,13 @@ if(!$auth) {
 require '../includes/config/database.php';
 $db = conectarDB();
 
-//Enviar información de vendedores
-$queryVendedores = "SELECT * FROM vendedores";
-//Consultamos la bd
-$resultadoVendedores = mysqli_query($db, $queryVendedores);
-//Construimos un arreglo con los vendedores
-$vendedores = [];
-while($vendedor = mysqli_fetch_assoc($resultadoVendedores)) {
-  $vendedores[] = $vendedor;
-}
-
-//Escribir el Query de propiedades
+//Escribir el Query
 $query = "SELECT * FROM propiedades";
 
 //Consultar la BD
 $resultadoConsulta = mysqli_query($db, $query);
 
-//Muestra mensaje condicional
+//Muestea mensaje condicional
 $resultado = $_GET['resultado'] ?? null;
 
 //Boton Eliminar
@@ -58,68 +48,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 //Incluye un template
 
-// incluirTemplate('header');
+incluirTemplate('header');
 
 
 ?>  
-<?php
-  
-  //Verificar si existe inicio de sesión
-if(!isset($_SESSION)) {
-  session_start();
-}
-  $auth = $_SESSION['login'] ?? false;
 
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="/build/css/app.css" />
-    <link rel="icon" href="src/img/favicon.ico">
-  </head>
-  <body>
-      <header class="admin-header">
-          <div class="contenedor contenido-header">
-            <div class="barra">
-              <a class="logo" href="/">
-                <img src="/build/img/logo.svg" alt="Logo de Bienes Raices" />
-              </a>
-          
-              <!--Dark Mode-->
-              <div class="mobile-menu">
-                <img src="/build/img/barras.svg" alt="icono menu responsive">
-              </div>
-              
-              <div class="derecha">
-                <img class="dark-mode-boton" src="/build/img/dark-mode.svg">
-                <nav class="navegacion">
-                  <a href="nosotros.php">Nosotros</a>
-                  <a href="anuncios.php">Anuncios</a>
-                  <a href="blog.php">Blog</a>
-                  <a href="contacto.php">Contacto</a>
-                  <?php if($auth): ?>
-                    <a  class="btn-iniciar" href="cerrar-sesion.php">Cerrar Sesión</a>
-                   <?php endif; ?> 
-                </nav>
-              </div>
-
-            </div><!--Barra-->
-
-            <!-- <?php
-              // if($inicio) {
-                // echo "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>";
-              // }
-            ?> -->
-            
-          </div>
-    </header>
-  </body>
-</html>
 <!-- <script src="https://kit.fontawesome.com/1263a3fbcb.js" crossorigin="anonymous"></script> -->
 <link rel="stylesheet" href="src/scss/fontawesome/css/all.min.css">
 
@@ -151,18 +85,15 @@ if(!isset($_SESSION)) {
             <th>WC</th>
             <th>Estacionamiento</th>
             <th>Vendedor</th>
-            <th>Fecha</th>
+            <th>Creado</th>
 
             <th>Acciones</th>
           </tr>
         </thead>
 
         <tbody><!-- Mostrar los Resultados -->
-              
-        <?php while($propiedad = mysqli_fetch_assoc($resultadoConsulta)): ?>
-            <?php foreach($vendedores as $vendedor): ?>
+          <?php while ($propiedad = mysqli_fetch_assoc($resultadoConsulta)): ?>
           <tr>
-       
             <td><?php echo $propiedad['id'];?></td>
             <td class="titulo-tabla"><?php echo $propiedad['titulo'];?></td>
             <!-- <td> <img src="imagenes/<?php echo $propiedad['imagen'];?>" class="imagen-tabla"> </td> -->
@@ -170,7 +101,7 @@ if(!isset($_SESSION)) {
             <td><?php echo $propiedad['habitaciones'];?></td>
             <td><?php echo $propiedad['wc'];?></td>
             <td><?php echo $propiedad['estacionamiento'];?></td>
-            <td><?php echo $vendedor['nombre']. " " . $vendedor['apellido']; ?></td>
+            <td><?php echo $propiedad['vendedorId'];?></td>
             <td><?php echo $propiedad['creado'];?></td>
             
             
@@ -185,8 +116,8 @@ if(!isset($_SESSION)) {
             </td>
           </tr>
 
-           <?php endforeach; ?>
-          <?php endwhile; ?> 
+          <?php endwhile; ?>
+           
 
         </tbody>
 

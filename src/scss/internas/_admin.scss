@@ -16,10 +16,10 @@
 table.propiedades {
     margin-top: 4rem;
     width: 100%;
-   // border-spacing: 0;
-    //border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: collapse;
     text-align: center;
-    //border-bottom: 1px solid #fff;
+   // border-bottom: 1px solid #fff;
 
     thead {
         background-color: #3e86b3;
@@ -27,9 +27,10 @@ table.propiedades {
 
         th {
             padding: 1.5rem;
+            border-block-start: 0.1px solid $blanco;
             //border-bottom: 1px solid #fff;
-            // border-left: 0.5px solid #fff;
-            // border-right: 0.5px solid #fff;
+            border-left: 0.5px solid #fff;
+            border-right: 0.5px solid #fff;
         }
     }
 
@@ -42,10 +43,10 @@ table.propiedades {
         background: #e3eef1;
 
         td{
-            //border-bottom: 1px solid #fff;
-            // border-left: 0.5px solid #fff;
-            // border-right: 0.5px solid #fff;
-            //border-top: 1px solid transparent; 
+            border-bottom: 1px solid #fff;
+            border-left: 0.5px solid #fff;
+            border-right: 0.5px solid #fff;
+            border-top: 1px solid transparent; 
         }
 
     }
@@ -61,7 +62,7 @@ table.propiedades {
     margin: 2rem;
 }
 
-.boton-amarillo-tabla{
+.amarillo-tabla {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
@@ -75,7 +76,9 @@ table.propiedades {
     padding-right: 2rem;
     background-color: $amarillo;
     color: $negro;
-    gap: 2px;
+    //gap: 2px;
+    border: none;
+    height: 3rem;
     
     // border-top-right-radius: 8px;
     // border-bottom-left-radius: 8px;
@@ -83,11 +86,11 @@ table.propiedades {
     
 }
 
-
-.boton-rojo-tabla {
+.rojo-tabla {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
+    height: 3rem;
     width: 12rem;
     line-height: 2rem;
     margin-bottom: 1.5rem;
@@ -95,9 +98,16 @@ table.propiedades {
     margin-left: auto;
     margin-right: auto;
     padding-right: 2rem;
-    gap: 5px;
+    //gap: 5px;
     background-color: $rojo;
     color: $negro;
-    //font-weight: 400;
+    font-weight: 400;
+    border: none;
+    margin-block: 1rem;
     
+}
+
+.admin-header {
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
 }

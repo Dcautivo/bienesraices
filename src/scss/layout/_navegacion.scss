@@ -51,14 +51,16 @@
         font-size: 2.2rem;
         display: block;
         text-align: center;
-        padding: 2rem;//Espacio entre palabras navegacion
+        //padding: 2rem;//Espacio entre palabras navegacion
 
         @include tablet {
             margin-right: 2rem;//Espacio entre palabras
             font-size: 1.8rem;//Tamaño de las letras
+            padding: 2rem;//Espacio entre palabras navegacion
 
             &:last-of-type {
                 margin-right: 0;
+                width: 13rem;
             }
         }
 
@@ -71,11 +73,15 @@
     .btn-iniciar {
         color: red;
         border: $rojo 1px solid;
-        height: 3rem;
+        height: 3.5rem;
         display: flex;
         justify-content: space-evenly;
         flex-direction: column-reverse;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        
     }
+
 }
 
 //Menu de hanburguesa

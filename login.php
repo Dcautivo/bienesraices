@@ -1,3 +1,69 @@
+<?php
+
+    //Conexion a base de datos
+    require 'includes/config/database.php';
+    $db = conectarDB();
+
+    session_start();
+    if(isset($_SESSION['login'])) {
+        header('Location: /');
+    }
+    //Autenticar el usuario
+
+    $errores = [];
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // var_dump($_POST);
+
+        $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+
+        $password = mysqli_real_escape_string($db, $_POST['password']);
+
+        if(!$email) {
+            $errores[] = "El email es obligatorio o no es válido";
+        }
+
+        if(!$password) {
+            $errores[] = "El password es obligatorio";
+        }
+
+        if(empty($errores)){
+            //Revisar si el usuario existe
+            $query = "SELECT * FROM usuarios WHERE email = '${email}' ";
+            $resultado = mysqli_query($db, $query);
+            
+
+            if($resultado->num_rows) {
+                //Revisar si el pssword es correcto
+                $usuario = mysqli_fetch_assoc($resultado);
+                //Verificar si el password es correcto  o no 
+                $auth = password_verify($password, $usuario['password']);
+
+                if($auth) {
+                    //El usuario es autenticado
+                    session_start();
+
+                    //Llenar el arreglo de la sesión
+                    $_SESSION['usuario'] = $usuario['email'];
+                    $_SESSION['login'] = true;
+                    //Redirige a admin
+                    header('Location: /admin');
+                    
+                } else {
+                    $errores[] = "El password es incorrecto";
+                }
+            } else {
+                $errores[] = "Usuario no existe";
+            }
+
+        }
+    }
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +74,6 @@
     <!-- Los iconos tipo Solid de Fontawesome-->
     <script src="https://kit.fontawesome.com/1263a3fbcb.js" crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="../public/fawesome/js/all.min.js"></script>
-    <script src="../public/js/bootbox.min.js"></script> -->
     <!-- Nuestro css Sin Internet-->
     <!-- <link rel="stylesheet" href="src/scss/fontawesome/css/all.min.css"> -->
     <!-- Nuestro css-->
@@ -33,19 +98,29 @@
         <div class="col-sm-9 main-section">
             <div class="modal-content">
                 <div id="logo-img" class="col-12 user-img">
-                    <img clas="img-inicio"src="src/img/logo-inicio.webp"/>
+                    <img clas="img-inicio"src="src/img/logo-modal.jpg"/>
                 </div>
                 <form class="col-12" method="POST" id="formulario">
-                <div class="form-group" id="user-group">
-                        <i class="fa fa-user user-icon"></i>
-                        <input type="text" class="form-control" placeholder="Nombre de usuario" id="usuario" name="usuario" autofocus/>
-                        
+                    <?php foreach($errores as $error): ?>
+                        <div class="alerta errores">
+                            <?php echo $error; ?>
+                        </div>
+                    <?php endforeach; ?>    
+
+                    <div class=" w3l-form-group">
+                        <label class="form-label">Usuario:</label>
+                        <div class="group">
+                            <i class="fas fa-user"></i>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required="required"/>
+                        </div>
                     </div>
-                    <div class="form-group" id="contrasena-group">
-                        
-                        <input type="password" class="form-control" placeholder="Contrasena" id="password" name="password"/>
+                    <div class=" w3l-form-group">
+                        <label class="form-label">Contraseña:</label>
+                        <div class="group">
+                            <i class="fas fa-unlock"></i>
+                            <input type="password" name="password" class="form-control" placeholder="Tu Password" required="required"/>
+                        </div>
                     </div>
-                      
                     
                     <div class="pass-recovery">
                         <a class="recuperar" href="#">

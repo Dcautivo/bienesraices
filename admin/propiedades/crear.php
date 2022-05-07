@@ -1,4 +1,11 @@
 <?php
+  require '../../includes/funciones.php';
+  $auth = estarAutenticado();
+
+  if(!$auth) {
+    header('Location: /');
+  }
+
 
 //Base de datos
 require '../../includes/config/database.php';
@@ -24,6 +31,8 @@ $errores = [];
 //echo "<pre>";
 //var_dump($_SERVER['REQUEST_METHOD']);
 //echo "</pre>";
+
+
 
 //***Enviar Informacion
 if($_SERVER ['REQUEST_METHOD'] === 'POST') {
@@ -123,7 +132,7 @@ if($_SERVER ['REQUEST_METHOD'] === 'POST') {
 }
 
 
-  require '../../includes/funciones.php';
+  // require '../../includes/funciones.php';
   incluirTemplate('header');
 
 ?>

@@ -1,3 +1,14 @@
+
+<?php
+  
+  //Verificar si existe inicio de sesión
+if(!isset($_SESSION)) {
+  session_start();
+}
+  $auth = $_SESSION['login'] ?? false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +23,7 @@
       <header class="header  <?php echo  $inicio  ? 'inicio' : ''; ?>">
           <div class="contenedor contenido-header">
             <div class="barra">
-              <a class="logo" href="/">
+              <a class="logo logo-header" href="/">
                 <img src="/build/img/logo.svg" alt="Logo de Bienes Raices" />
               </a>
           
@@ -28,8 +39,14 @@
                   <a href="anuncios.php">Anuncios</a>
                   <a href="blog.php">Blog</a>
                   <a href="contacto.php">Contacto</a>
-                  <a class="btn-iniciar" href="login.php">Iniciar sesión</a>
-                  <a class="btn-iniciar" href="crear-cuenta.php">Crear Cuenta</a>
+                  <!-- <a class="btn-iniciar" href="login.php">Iniciar sesión</a> -->
+                  <?php if(!$auth): ?>
+                    <a class="btn-iniciar" href="login.php">Iniciar Sesión</a>
+                   <?php endif; ?> 
+                  <a class="btn-iniciar" href="crear-cuenta.php">Registrate</a>
+                  <?php if($auth): ?>
+                    <a  class="btn-iniciar" href="/cerrar-sesion.php">Cerrar Sesión</a>
+                   <?php endif; ?> 
                 </nav>
               </div>
 

@@ -26,3 +26,13 @@ incluirTemplate('header');
     <script src="build/js/bundle.min.js"></script>
   </body>
 </html>
+
+RewriteBase /
+RewriteBase On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+Rewriterule ^(.*)$ $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+Rewriterule ^(.*)$ $1.php
