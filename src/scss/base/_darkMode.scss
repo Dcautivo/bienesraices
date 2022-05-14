@@ -9,10 +9,21 @@
         color: $gris;
     }
 
-    .anuncio,
-    .resumen-propiedad {
+    .anuncio{
         background-color: $grisOscuro;
         border: 1px solid $grisOscuro;
+        width: 100%;
+       // margin: 20px;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: $grisOscuro;
+        box-shadow: 0px 1px 10px rgba(177, 173, 173, 0.2);
+        cursor: default;
+        transition: all 400ms ease;
+        border: 1px dashed #9fa1a1;
+
+
+        //box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
 
         .precio {
             color: $verde;
@@ -20,6 +31,10 @@
         .icono {
             filter: invert(100%);
         }
+    }
+    .anuncio:hover {
+        box-shadow: 5px 5px 20px rgba(250, 245, 245, 0.4);
+        transform: translateY(-2%);
     }
 
     .texto-nosotros blockquote {
@@ -45,7 +60,7 @@
     
 
     table.propiedades {
-
+        box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
         tbody {
            background-color:$grisOscuro;
         }
@@ -65,5 +80,17 @@
         }
 
         
+    }
+
+    .card .back {
+        transform: rotateX(-90deg) translateZ(-5.625rem);
+        background: $grisOscuro;
+        padding: 15px;
+        color: $blanco;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        box-shadow: 0 2px 8px $blanco;
     }
 }

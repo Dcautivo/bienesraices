@@ -45,7 +45,7 @@ $resultado = mysqli_query($db, $query);
           </div><!--Contenido Anuncio-->
         </div><!--Anuncio-->
         <?php endwhile; ?>
-    </div><!--Contenedor Anuncio-->
+  </div><!--Contenedor Anuncio-->
 
     <?php 
 

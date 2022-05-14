@@ -1,3 +1,55 @@
+#btn-mas {
+    display: none;
+}
+
+.container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.redes a, .icon-mas2 {
+    display: block;
+    text-decoration: none;
+    background: #cc2b2b;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4) ;
+    transition: all 500ms ease;
+}
+
+.redes a:hover {
+    background: #fff;
+    color: #cc2b2b;
+}
+
+.redes a {
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-mas:checked ~ .redes a {
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-mas2 {
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+}
+
+#btn-mas:checked ~ .btn-mas .icon-mas2 {
+    transform: rotate(137deg);
+    font-size: 25px;
+}
+
 .no-webp .inicio {
     background-image: url(../img/header.jpg);
 }
@@ -8,6 +60,7 @@
 .header {
     background-color: $grisOscuro;
     padding: 1rem 0 3rem 0;
+    width: 100%;
 
         &.inicio {
             background-position: center center;
@@ -31,6 +84,7 @@
     display: flex;
     flex-direction: column;//Hacer usos de propiedades de flexbox
     justify-content: space-between;
+    font-size: 1rem;
 
     h1 {
         text-align: left;
@@ -38,14 +92,24 @@
         font-weight: $bold;
         line-height: 2;
         max-width: 60rem;//Salto de linea automaticamente
+        
+        @media screen and (max-width: 730px) {
+            font-size: 2.5rem;          
+         }
     }
 }
 .logo {
   height: 5rem;
   position: relative;
   top: 2rem;
-}
 
+//   @media screen and (max-width: 850px) {
+//         max-width: 100%;
+//         width: 300px !important;
+//         height: auto;
+//     }
+}
+//Estilos Para Mozilla
 .logo-header {
     max-width: 100%;
     width: 28rem;

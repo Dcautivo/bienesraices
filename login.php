@@ -79,7 +79,7 @@
     <!-- Nuestro css-->
     <!-- <link rel="stylesheet" href="src/scss/fontawesome/css/all.min.css"> -->
     <link rel="stylesheet" type="text/css" href="src/scss/internas/_login.scss">
-    <link rel="icon" href="src/img/favicon.ico">
+    <!-- <link rel="icon" href="src/img/favicon.ico"> -->
     <link rel="stylesheet" type="text/css" href="src/css/loginload.css">
     
     <?php

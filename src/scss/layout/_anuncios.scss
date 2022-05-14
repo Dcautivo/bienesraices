@@ -3,14 +3,36 @@
         @include grid(3, 2rem)
     }
 }
+.anuncio{
+    width: 100%;
+    //margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: $grisOscuro;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;            
+        //box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
+}
+
+.anuncio:hover {
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3%);
+    }
+.anuncio p {
+    line-height: 1.5;
+    text-align: center;
+}
 
 .anuncio {
     background-color: lighten($gris, 5);
     border: 1px solid darken($gris, 10);
+    border: 1px dashed #9fa1a1;
     margin-bottom: 2rem;
-
+    
     .contenido-anuncio {
         padding: 2rem;
+        
     }
     h3, p {
         margin: 0;

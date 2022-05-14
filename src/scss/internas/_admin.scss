@@ -19,6 +19,7 @@ table.propiedades {
     border-spacing: 0;
     border-collapse: collapse;
     text-align: center;
+    box-shadow: 0 0 4px 0 rgba(54, 53, 53, 0.8);
    // border-bottom: 1px solid #fff;
 
     thead {
@@ -100,10 +101,11 @@ table.propiedades {
     padding-right: 2rem;
     //gap: 5px;
     background-color: $rojo;
-    color: $negro;
+    color: $blanco;
     font-weight: 400;
     border: none;
     margin-block: 1rem;
+    cursor: pointer;
     
 }
 

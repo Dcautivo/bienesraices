@@ -32,10 +32,12 @@
     margin-top: calc($separacion / 2);
     display: $display;
     border: none;
+    
 
     &:hover {
         background-color: ($bgColor, 5);
         cursor: pointer;
         color: $blanco;
+        box-shadow: 0 0 5px $bgColor, 0 0 30px $bgColor, 0 0 40px $bgColor;
     }
 }

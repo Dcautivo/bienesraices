@@ -23,7 +23,6 @@ $consulta = "SELECT * FROM propiedades WHERE id = ${id}";
 $resultado = mysqli_query($db, $consulta);
 $propiedad = mysqli_fetch_assoc($resultado);
 
-
 //Consultar para obtener los vendedores
 $consulta ="SELECT * FROM vendedores";
 $resultado = mysqli_query($db, $consulta);

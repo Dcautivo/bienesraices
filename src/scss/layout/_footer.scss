@@ -12,6 +12,14 @@
         height: auto;
         align-items: center;
         padding-left: center;
+
+        @media screen and (max-width: 1200px) {
+            a{
+                width: auto;
+                font-size: 1.7rem;
+                //margin-right: 1rem;
+            }
+        }
     }
     .copyright {
         color: $blanco;

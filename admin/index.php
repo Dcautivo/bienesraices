@@ -181,6 +181,8 @@ if(!isset($_SESSION)) {
                     <button class="rojo-tabla" type="hidden" name="id" value="<?php echo $propiedad['id'];?> "><i class="fa-solid fa-trash-can"></i>Eliminar</button>
 
                 </form>
+                
+                
                   <a href="admin/propiedades/actualizar.php?id=<?php echo $propiedad['id'];?> " class="amarillo-tabla"><i class="fa-solid fa-pencil"></i>Actualizar</a>
             </td>
           </tr>

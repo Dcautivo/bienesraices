@@ -54,9 +54,9 @@
         //padding: 2rem;//Espacio entre palabras navegacion
 
         @include tablet {
-            margin-right: 2rem;//Espacio entre palabras
+            margin-right: 1rem;//Espacio entre palabras
             font-size: 1.8rem;//Tamaño de las letras
-            padding: 2rem;//Espacio entre palabras navegacion
+            padding: 0.5rem 2rem;//Espacio entre palabras navegacion
 
             &:last-of-type {
                 margin-right: 0;
@@ -66,6 +66,17 @@
 
         &:hover {
             color: $verde;//Cambio de color al momento de psar el cursor
+            //text-decoration: underline $verde 2px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+            &:after {
+                content: "";
+                display: block;
+                margin-top: 0.1rem;
+                background-color: $verde;
+                height: 1.2px;
+                width: auto;
+            }
         }
 
     }
@@ -82,9 +93,62 @@
         
     }
 
+    @media screen and (max-width: 1200px) {
+        a{
+            font-size: 1.5rem;
+            width: 12rem;
+            margin-bottom: 1rem;
+            //margin-right: 1rem;
+        }
+    }
+
 }
 
 //Menu de hanburguesa
+
+
+// .mobile-menu {
+//     width: 50px;
+//     height: 30px;
+//     position: relative;
+//     cursor: pointer;
+// }
+
+// .mobile-menu #spn1,#spn2,#spn3 {
+//     position: absolute;
+//     content: '';
+//     background: $amarillo;
+//     width: 50px;
+//     height: 5px;
+//     border-radius: 5px;
+//     transition: all 400ms ease;
+// }
+
+// #spn2 {
+//     top: 11px;
+// }
+
+// #spn3 {
+//     top: 22px;
+// }
+
+// #btn-menu {
+//     display: none;
+// }
+
+// #btn-menu:checked ~ .mobile-menu #spn1 {
+//     transform: rotate(140deg);
+//     top: 10px;
+// }
+
+// #btn-menu:checked ~ .mobile-menu #spn2 {
+//     opacity: 0;
+// }
+
+// #btn-menu:checked ~ .mobile-menu #spn3 {
+//     transform: rotate(-140deg);
+//     top: 10px;
+// }
 
 .mobile-menu {
     @include tablet {

@@ -8,20 +8,21 @@ incluirTemplate('header');
       <h1>Conoce sobre Nosotros</h1>
 
       <div class="contenido-nosotros">
-        <div class="imagen">
-          <picture>
+        <div class="nosotros">
+          <div class="imagen-nosotros"></div>
+          <!-- <picture class="imagen-nosotros">
             <source srcset="build/img/nosotros.webp" type="image/webp">
             <source srcset="build/img/nosotros.jpg" type="image/jpeg">
             <img loading="lazy" src="build/img/nosotros.jpg" alt="Sobre Nosotros">
-          </picture>
+          </picture> -->
         </div>
 
         <div class="texto-nosotros">
           <blockquote>
             25 años de Experencia
           </blockquote>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+          <p>By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
         </div>
 
       </div>
