@@ -43,42 +43,168 @@
     cursor: pointer;
     background: #f44141;
     font-size: 23px;
+    //height: 55px;
+    line-height: 55px!important;
 }
 
 #btn-mas:checked ~ .btn-mas .icon-mas2 {
     transform: rotate(137deg);
     font-size: 25px;
+    height: 55px;
+    line-height: 55px;
+}
+//Inicio Slider
+
+.slider {
+    background-size: cover;
+    background-position: 50%;
+    overflow: hidden;
+    height: 800px;
 }
 
-.no-webp .inicio {
-    background-image: url(../img/header.jpg);
-}
-.webp .inicio {
-    background-image: url(../img/header.webp);
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
 }
 
-.header {
-    background-color: $grisOscuro;
-    padding: 1rem 0 3rem 0;
-    width: 100%;
+.slides input {
+    display: none;
+}
 
-        &.inicio {
-            background-position: center center;
-            background-size: cover;//Todo es espacio disponible
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+// .slide img {
+//     width: 100%;
+//     height: 750px;
+//  }
+ 
+.navegacion-manual {
+    position: absolute;
+    left: 50%;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #23E3C9;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;/*separcion de los radios*/
+}
+
+.manual-btn:hover {
+    background: #23E3C9;
+}
+
+#radio1:checked ~ .primero {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .primero {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .primero {
+    margin-left: -40%;
+}
+/*Css Para Automatico*/
+
+.navegacion-auto {
+    position: absolute;
+    left: 50%;
+    margin-top: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.navegacion-auto .auto {
+    border: 2px solid #40D3C3;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navegacion-auto .auto:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navegacion-auto .auto-btn1 {
+    background: #40D3C3;
+}
+
+#radio2:checked ~ .navegacion-auto .auto-btn2 {
+    background: #40D3C3;
+}
+
+#radio3:checked ~ .navegacion-auto .auto-btn3 {
+    background: #40D3C3;
+}
+//Fin Slider
+// .no-webp .inicio {
+//     background-image: url(../img/header.jpg);
+    
+// }
+// .webp .inicio {
+//     background-image: url(../img/header.webp);
+   
+// }
+
+// .header {
+//     background-color: $grisOscuro;
+//     padding: 1rem 0 3rem 0;
+//     width: 100%;
+//     //height: 700px;
+
+//         &.inicio {
+//             background-position: center center;
+//             background-size: cover;//Todo es espacio disponible
             
-            @include tablet {
-                min-height: 70rem;
-            }
-            .contenido-header {
-                @include tablet {
-                    min-height: 70rem;
-            }
-        }
+//             @include tablet {
+//                // min-height: 70rem;
+//             }
+//             .contenido-header {
+//                 @include tablet {
+//                     min-height: 70rem;
+//             }
+//         }
         
-    }
+//     }
 
+// }
+// &.inicio {
+//     background-position: center center;
+//     background-size: cover;//Todo es espacio disponible
+                
+//     @include tablet {
+//        // min-height: 70rem;
+//     }
+//     .contenido-header {
+//      @include tablet {
+//       min-height: 70rem;
+//      }
+//     }
+            
+// }
+
+.imagen-slider img {
+    width: 100%;
+    height: 830px;
+
+    @media screen and (max-width: 730px) {
+        max-width: 100%;
+        height: 115%;
+      //  margin: -13rem 0;         
+     }
 }
-
 
 .contenido-header {
     display: flex;
@@ -92,9 +218,11 @@
         font-weight: $bold;
         line-height: 2;
         max-width: 60rem;//Salto de linea automaticamente
+        margin: 24rem 0;
         
         @media screen and (max-width: 730px) {
-            font-size: 2.5rem;          
+            font-size: 2.5rem; 
+          //  margin: -13rem 0;         
          }
     }
 }

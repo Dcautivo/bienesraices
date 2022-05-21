@@ -42,6 +42,7 @@ table.propiedades {
 
     tbody {
         background: #e3eef1;
+        
 
         td{
             border-bottom: 1px solid #fff;
@@ -56,6 +57,10 @@ table.propiedades {
         text-align: justify;
         padding-left: 1rem;
     }
+}
+
+tbody tr:hover {
+    background: rgba(196, 212, 236, 0.4);
 }
 
 .imagen-small {

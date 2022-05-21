@@ -1,45 +1,42 @@
 @include tablet {
     .body-cliente {
-        @include grid(3, 2rem)
+        @include grid(3, 2rem);
+        justify-items: center;
     }
 }
-// .body-cliente {
-//     display: grid;
-//     align-content: space-between;
-//     grid-template-columns: repeat(3,1fr);
-//     justify-items: center;
-//     justify-content: center;
-//     //flex-direction: column(2fr 1fr);
-//    // flex-wrap: wrap;
-//     background: rgba(177, 173, 173, 0.2) ;
-    
-//     @media screen and (min-width: 768px) {
-//         .body-cliente {
-//             width: 100%;
-//             grid-template-columns: repeat(2,1fr);
-//         }
-//     }
-// }
+
+@media screen and (max-width: 350px) {
+    .body-cliente {
+    display: grid;
+    //margin: 1rem;
+    //gap: 2rem;     
+    grid-template-columns: repeat(1fr);
+    justify-items: center;
+    }
+}
+
 @media screen and (max-width: 450px) {
-    .body-cliente .card{
+    .body-cliente .tarjeta{
         width: 90%;
+        justify-items: center;
     }
 }
 
 @media screen and (max-width: 850px) {
-    .body-cliente .card{
+    .body-cliente .tarjeta{
+        column-gap: 1fr;
         width: 96%;
     }
 }
 
-.card {
+.tarjeta {
     position: relative;
     width: 300px;
     height: 350px;
     margin: 15px;
 }
 
-.card .face {
+.tarjeta .face {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -49,19 +46,19 @@
     transition: .5s;
 }
 
-.card .front {
-    transform: perspective(600px) rotate(0deg);
-   // box-shadow: 0 5px $negro;
+.tarjeta .front {
+   transform: perspective(600px) rotate(0deg);
+   box-shadow: 0 5px $negro;
 }
 
-.card .front img {
+.tarjeta .front img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card .front h3 {
+.tarjeta .front h3 {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -70,9 +67,12 @@
     color: $blanco;
     background-color: $negro;
     text-align: center;
+    color: $blanco;
+    background: #1a1a1a;
+    text-shadow: 0 0 15px rgba(44, 43, 43, 0.5), 0 0 10px rgba(255,255,255,.5);  
 }
 
-.card .back {
+.tarjeta .back {
     //transform: perspective(600px) rotateY(180deg);
    // -webkit-transform: rotateX(-90deg) translateZ(-5.625rem);
     transform: rotateX(-90deg) translateZ(-5.625rem);
@@ -86,17 +86,17 @@
     box-shadow: 0 5px 10px $negro;
 }
 
-.card .back .link {
+.tarjeta .back .link {
     border-top: solid 1px $blanco;
     height: 50px;
     line-height: 50px;
 }
 
-.card .back .link a {
+.tarjeta .back .link a {
     color: $blanco;
 }
 
-.card .back h3 {
+.tarjeta .back h3 {
     font-size: 30px;
     margin-top: 20px;
     letter-spacing: 2px;
@@ -108,10 +108,10 @@
     letter-spacing: 1px;
 }
 
-.card:hover .front {
+.tarjeta:hover .front {
     transform: perspective(600px) rotateY(180deg);
 }
 
-.card:hover .back {
+.tarjeta:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }

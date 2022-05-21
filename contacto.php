@@ -4,6 +4,7 @@ require 'includes/funciones.php';
 
 incluirTemplate('header');
 
+// incluirSlider('slider');
 
 ?>   
     

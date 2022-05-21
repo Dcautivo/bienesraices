@@ -17,7 +17,7 @@ incluirTemplate('header');
 </head>
     <section class="contenedor">
     <div class="body-cliente">
-        <div class="card">
+        <div class="tarjeta">
             <div class="face front">
                 <img src="src/img/img1.jpeg" alt="imagen-japan">
                 <h3>Japan</h3>
@@ -30,7 +30,7 @@ incluirTemplate('header');
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="tarjeta">
             <div class="face front">
                 <img src="src/img/img2.jpeg" alt="imagen-japan">
                 <h3>Spain</h3>
@@ -43,7 +43,7 @@ incluirTemplate('header');
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="tarjeta">
             <div class="face front">
                 <img src="src/img/img3.jpeg" alt="imagen-japan">
                 <h3>Perú</h3>

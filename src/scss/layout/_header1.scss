@@ -1,0 +1,85 @@
+body {
+    margin:0;
+    padding:0;
+}
+.slider {
+    background-size: cover;
+    background-position: 50%;
+    overflow: hidden;
+    height: 800px;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+.slide img {
+    width: 100%;
+    height: 750px;
+ }
+ 
+.navegacion-manual {
+    position: absolute;
+    left: 50%;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #23E3C9;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;/*separcion de los radios*/
+}
+
+.manual-btn:hover {
+    background: #23E3C9;
+}
+
+#radio1:checked ~ .primero {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .primero {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .primero {
+    margin-left: -40%;
+}
+
+
+
+
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    height: 5rem;
+    position: relative;
+    top: -24rem;
+    width: 12rem;
+}
+  //Estilos Para Mozilla
+  .logo-header {
+      max-width: 100%;
+      width: 28rem;
+      height: auto;
+  }

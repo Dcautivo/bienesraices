@@ -44,9 +44,8 @@ incluirTemplate('header');
     <title>Document</title>
 </head>
 <body>
-    <div class="colaborador">
+    <!-- <div class="colaborador">
         <div class="card">
-        <!-- <img class="card-encabezado" src="src/img/colaborador1.jpeg" alt=""> -->
             <div class="figuras">
                 <img class="card-encabezado" src="src/img/colaborador1.jpeg" alt="">
             </div>
@@ -54,9 +53,6 @@ incluirTemplate('header');
                 <li class="agrandar"><a href=""><span class=" agrandar fa-brands fa-facebook"></span></a> </li>
                 <li class="agrandar"><a href=""><span class=" agrandar fa-brands fa-whatsapp"></span></a> </li>
                 <li class="agrandar"><a href=""><span class=" agrandar fa-brands fa-facebook-messenger"></span></a> </li>
-                <!-- <li href="#" class=" agrandar fa-brands fa-facebook" ></li>
-                <li href="#" class=" agrandar fa-brands fa-whatsapp"></li>
-                <li href="#" class=" agrandar fa-brands fa-facebook-messenger"></li> -->
             </div>
             <div class="card-contenido">
                 <div class="info-personal desplazar">Alex Garcia</div>
@@ -67,11 +63,12 @@ incluirTemplate('header');
             </div>
             <div class="card-acciones">
                 <button class="botones agrandar">
-                    <span class="fa-brands fa-envelope"></span>
+                <span><i class="fa-solid fa-envelope"></i></span>
                     Enviar Correo
                 </button>
             </div>
         </div>
     </div>
+     -->
 </body>
 </html>
